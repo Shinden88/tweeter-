@@ -6,19 +6,23 @@ nav {
   padding-right: 1.5em;
   padding-left: 1.5em;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   top: 0;
+  z-index: 10;
 }
 
 nav span {
-  font-family: 'Bungee', sans-serif;
+  font-family: 'Bungee', cursive;
   font-size: 30px;
 }
 
-nav p {
-  margin-bottom: 2px;
+span.write {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 div.right {
