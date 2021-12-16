@@ -17,7 +17,11 @@ const renderTweets = function (tweets) {
   }
 };
 
-
+const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
 
 const createTweetElement = function(tweet) {
@@ -31,7 +35,7 @@ const createTweetElement = function(tweet) {
             </div>
             <span class="handle">${tweet.user.handle}</span>
           </header>
-          <p class="tweet-status">${tweet.content.text}</p>
+          <p class="tweet-status">${escape(tweet.content.text)}</p>
           <footer>
             <span>${tweet.created_at}</span>
             <div class="feed-icons">
@@ -66,7 +70,14 @@ $("form").on("submit", function (event) {
     alert("Character limit is 140");
   } else {
   let url = '/tweets/';
-  $.post(url, $(this).serialize());
+  $.ajax({
+    url: url,
+    method: "POST",
+    data: $(this).serialize(),
+    success: function (data) {
+      location.reload();
+    }
+  })
   }
  });
 });
