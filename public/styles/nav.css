@@ -15,12 +15,14 @@ nav {
 
 nav span {
   font-family: 'Bungee', cursive;
-  font-size: 34px;
+  font-size: 40px;
 }
 
 span.write {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 div.right {
@@ -31,5 +33,5 @@ div.right {
 }
 
 i.arrow {
-  color: red;
+  color: orange;
 }

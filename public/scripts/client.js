@@ -8,6 +8,7 @@
 $(document).ready(function() {
   
 const renderTweets = function (tweets) {
+  $('#tweets').empty()
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -17,17 +18,17 @@ const renderTweets = function (tweets) {
   }
 };
 
-const escape =  function(str) {
+const escape =  function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
 
 const createTweetElement = function(tweet) {
   let $tweet = /* Your code for creating the tweet element */
   // ...
-  `<article class="tweet">
+  `<article class="tweet" id="tweetz">
           <header>
             <div class="image-username">
               <img src="${tweet.user.avatars}">
@@ -55,6 +56,7 @@ const loadTweets = function () {
   })
     .then((result) => {
       renderTweets(result);
+      return;
     });
 };
 
@@ -65,19 +67,20 @@ $("form").on("submit", function (event) {
 
   const data = $('#tweet-text').val();
   if (data.trim() === '') {
-    alert("This field cannot be empty");
+    $("#empty").slideDown();
+    return;
   } else if ( data.length > 140) {
-    alert("Character limit is 140");
-  } else {
+    $("#error").slideDown();
+    return;
+  }
   let url = '/tweets/';
   $.ajax({
     url: url,
     method: "POST",
     data: $(this).serialize(),
-    success: function (data) {
-      location.reload();
-    }
   })
-  }
+    .then(loadTweets());
+    $(this).children('.submit-tweet').children('.counter').val('140');
+    $('#tweet-text').val('');
  });
 });

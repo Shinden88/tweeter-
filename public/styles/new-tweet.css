@@ -22,17 +22,18 @@ label {
 }
 
 #tweet-text {
+  padding-top: 10px;
   border: 0;
   outline: 0;
   height: auto;
-  border-bottom: 4px solid #545149;
-  margin-bottom: 10px;
+  border-bottom: 4px solid #0c0244;
+  margin-bottom: 5px;
   resize: none;
   background-color: transparent;
 }
 
 button {
-  background-color: #97b9ba;
+  background-color: #71a2a3;
   color: white;
   border: none;
   padding: 5px 15px;
@@ -50,13 +51,13 @@ button:hover {
 }
 
 #error {
-  background-color: #eadad0;
+  background-color: #798584;
   display: none;
   padding: 10px;
 }
 
 #empty {
-  background-color: #eadad0;
+  background-color: #798584;
   display: none;
   padding: 10px;
 }
