@@ -5,6 +5,7 @@
 
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -20,12 +21,14 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -33,13 +36,13 @@
     <nav>
       <span>tweeter</span>
       <div class="right">
-        <p><b>Write</b> a new tweet</p>
-        <i class="fas fa-angle-double-down"></i>
+        <span class="write"><b>Write</b> a new tweet</span>
+        <a href="#tweet-text"><i class="arrow fas fa-angle-double-down"></i></a>
       </div>
     </nav>
 
     
-    <header>
+    <header class="header">
       <div class="icon">
         <img src="/images/profile-hex.png">
       </div>
@@ -54,21 +57,22 @@
     <main class="container"></main>
 
       <section class="new-tweet">
-        <h2 class="compose-tweet"> Compose Tweet</h2>
+        <h2 class="compose-tweet">Compose Tweet</h2>
 
         <form method="POST" action="/tweets/">
 
           <label for="tweet-=text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" rows="2"></textarea>
 
           <div class="submit-tweet">
             <buton type="submit">Tweet</buton>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
-
         </form>
-        
       </section>
+
+      <section class="tweet-feed">
+      </section> 
       
     </main>  
   </body>
