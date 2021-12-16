@@ -58,7 +58,15 @@ loadTweets();
 
 $("form").on("submit", function (event) {
   event.preventDefault();
+
+  const data = $('#tweet-text').val();
+  if (data.trim() === '') {
+    alert("This field cannot be empty");
+  } else if ( data.length > 140) {
+    alert("Character limit is 140");
+  } else {
   let url = '/tweets/';
   $.post(url, $(this).serialize());
+  }
  });
 });
