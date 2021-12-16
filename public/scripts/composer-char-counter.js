@@ -1,16 +1,15 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  console.log("hello everyone");
-  $('#tweet-text').on('input', function() {
-    let stringFromElem = this.value;
-    const stringLen = stringFromElem.length;
-    const finalCharCount = 140 - stringLen;
-    $('.counter').html(finalCharCount);
 
-    if (finalCharCount < 0) {
-      $('.counter').addClass('red');
+  $("#tweet-text").on("input", function(event) {
+    const charsLeft = 140 - $(this).val().length; 
+    let counter = $(this).siblings().children(".counter").text(charsLeft);
+    
+    if (charsLeft < 0) {
+      counter.addClass("add-color");
     } else {
-      $('.counter').removeClass('red');
+      counter.removeClass("add-color");
+      $("#error").slideUp();
+      $("#empty").slideUp();
     }
   });
-}); 
+});
