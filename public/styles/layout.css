@@ -19,11 +19,12 @@ html {
 
 body {
   color: #ffffff;
-  background-color: rgb(182, 216, 213);
+  background-color: rgb(170, 207, 233);
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
   display: flex;
   flex-wrap: wrap;
+  background-image: url(/images/brick-wall-dark.png);
 }
 
 /*

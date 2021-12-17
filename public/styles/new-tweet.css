@@ -18,23 +18,26 @@ form {
 }
 
 label {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 #tweet-text {
+  font-size: 25px;
+  font-weight: 600;
+  color: #020944;
   padding-top: 10px;
   border: 0;
   outline: 0;
   height: auto;
-  border-bottom: 4px solid #0c0244;
-  margin-bottom: 5px;
+  border-bottom: 4px solid #020944;
+  margin-bottom: 10px;
   resize: none;
   background-color: transparent;
 }
 
 button {
-  background-color: #71a2a3;
-  color: white;
+  background-color: #163b77;
+  color: orange;
   border: none;
   padding: 5px 15px;
   outline: none;
@@ -42,7 +45,7 @@ button {
 
 button:hover {
   background-color: white;
-  color: #545149;
+  color: orange;
   padding: 5px 15px;
 }
 
@@ -51,22 +54,27 @@ button:hover {
 }
 
 #error {
-  background-color: #798584;
+  background-color: #627b8d;
   display: none;
   padding: 10px;
 }
 
 #empty {
-  background-color: #798584;
+  background-color: #627b8d;
   display: none;
   padding: 10px;
 }
 
-.footer {
+.footer-arrow {
   display: flex;
   justify-content: center;
 }
 
 .footer-arrow {
   color: orange;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
 }
