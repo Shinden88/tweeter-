@@ -27,7 +27,7 @@ $(document).ready(function () {
 
   const createTweetElement = function (tweet) {
     const time = dayjs(tweet.created_at).fromNow();
-    const $tweet = /* Your code for creating the tweet element */
+    let $tweet = /* Your code for creating the tweet element */
   // ...
   `<article class="tweet" id="tweetz">
           <header>
@@ -73,7 +73,7 @@ $(document).ready(function () {
       $('#error').slideDown();
       return;
     }
-    const url = '/tweets/';
+    let url = '/tweets/';
     $.ajax({
       url: url,
       method: 'POST',
