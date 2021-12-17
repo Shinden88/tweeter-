@@ -6,6 +6,9 @@
 
 // Fake data taken from initial-tweets.json
 $(document).ready(function() {
+
+  dayjs().format();
+  dayjs.extend(window.dayjs_plugin_relativeTime);
   
 const renderTweets = function (tweets) {
   $('#tweets').empty()
@@ -26,6 +29,9 @@ const escape =  function (str) {
 
 
 const createTweetElement = function(tweet) {
+  
+  const time = dayjs(tweet.created_at).fromNow();
+  
   let $tweet = /* Your code for creating the tweet element */
   // ...
   `<article class="tweet" id="tweetz">
@@ -38,7 +44,7 @@ const createTweetElement = function(tweet) {
           </header>
           <p class="tweet-status">${escape(tweet.content.text)}</p>
           <footer>
-            <span>${tweet.created_at}</span>
+            <span>${time}</span>
             <div class="feed-icons">
               <i class="fas fa-flag"></i>
               <i class="fas fa-retweet"></i>
