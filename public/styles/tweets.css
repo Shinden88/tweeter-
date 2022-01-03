@@ -44,18 +44,14 @@ article.tweet footer {
   word-break: break-all;
 }
 
-i {
-  color: #0c0244;
-}
-
 article.tweet:hover {
   box-shadow: 10px 10px #0c0244;
 }
 
 article.tweet:hover .handle {
-  color: #0c0244;
+  color: orange;
 }
 
 article.tweet:hover .feed-icons {
-  color: #0c0244;
+  color: orange;
 }
