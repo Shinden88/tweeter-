@@ -48,10 +48,13 @@ article.tweet:hover {
   box-shadow: 10px 10px #0c0244;
 }
 
-article.tweet:hover .handle {
+article.tweet .handle {
   color: orange;
 }
 
-article.tweet:hover .feed-icons {
+article.tweet .feed-icons {
+  color: #0c0244;
+}
+article.tweet .feed-icons .fas:hover {
   color: orange;
 }
